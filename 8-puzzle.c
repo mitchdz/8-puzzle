@@ -78,6 +78,7 @@ int run_program() {
         printf("%d, %d\n", current_blank_pos[0], current_blank_pos[1]);
 
 
+        print_puzzle(active_puzzle, PUZZLESIZE);
         //move_blank(UP);
         //move_blank(RIGHT);
         //move_blank(DOWN);

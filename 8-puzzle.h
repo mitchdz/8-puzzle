@@ -26,3 +26,12 @@ uint8_t test15puzzle[4][4] = {
         {11, 0,  15, 6},
         {10, 9,  8,  7}
 };
+
+
+void find_current_blank_position(uint8_t *out_pos, uint8_t *puzzle);
+
+
+
+
+
+
