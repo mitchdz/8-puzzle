@@ -1,6 +1,13 @@
 #pragma once
 #include <stdint.h>
 
+enum Movement {
+        UP = 1,
+        RIGHT = 2,
+        DOWN = 3,
+        LEFT = 4
+};
+
 uint8_t example_start_8_puzzle_v1[3][3] = {
         {1, 2, 6},
         {5, 8, 4},

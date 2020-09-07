@@ -36,30 +36,21 @@ int main(int argc, char *argv[]) {
 }
 
 void find_current_blank_position(uint8_t *out_pos, uint8_t *puzzle) {
-		uint8_t i = 0, j = 0;
+        uint8_t i = 0, j = 0;
         uint8_t current_pos[2] = {0, 0};
 
-        // TODO: implement
-
-		for (i = 0; i < matrixSizeX; i++) {
-			for (j = 0; j < matrixSizeY; j++) {
-			
-
-			}
-		}
-
-
-        *out_pos = *current_pos;
+        for (i = 0; i < matrixSizeX; i++) {
+            for (j = 0; j < matrixSizeY; j++) {
+                if (puzzle[j+i] == 0) {
+                    out_pos[0] = i;
+                    out_pos[1] = j;
+                    goto end;
+                }
+            }
+        }
+end:
         return;
 }
-
-
-enum Movement {
-        UP = 1,
-        RIGHT = 2,
-        DOWN = 3,
-        LEFT = 4
-};
 
 void move_blank(enum Movement direction) {
         uint8_t current_blank_pos[2] = { 0, 0 };
@@ -79,8 +70,8 @@ void move_blank(enum Movement direction) {
 }
 
 int run_program() {
-		//TODO: change puzzle to user input
-		uint8_t *active_puzzle = *example_8_puzzle_goal_state;
+        //TODO: change puzzle to user input
+        uint8_t *active_puzzle = *example_start_8_puzzle_v1;
 
         uint8_t current_blank_pos[2] = { 0, 0 };
         find_current_blank_position(current_blank_pos, active_puzzle);
